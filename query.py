@@ -5,6 +5,9 @@ import streamlit as st
 import numpy as np
 from supabase import create_client
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 model = SentenceTransformer("./models/all-MiniLM-L6-v2")
 
@@ -14,10 +17,10 @@ def embed(text):
     return embedding.tolist()  # Supabase expects a list, not a NumPy array
 
 # ✅ Initialize Supabase client
-SUPABASE_URL = st.secrets["SUPABASE_URL"]
-SUPABASE_SERVICE_KEY = st.secrets["SUPABASE_SERVICE_KEY"]
-
-supabase = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)
+supabase = create_client(
+    os.getenv("SUPABASE_URL"),
+    os.getenv("SUPABASE_SERVICE_KEY")
+)
 
 # ✅ Querying function
 def query_recommendations(user_query, threshold=0.4, top_k=10):

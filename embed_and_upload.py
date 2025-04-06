@@ -4,12 +4,15 @@ from datetime import datetime, timezone
 from supabase import create_client
 from sentence_transformers import SentenceTransformer
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Initialize Supabase client
-SUPABASE_URL = st.secrets["SUPABASE_URL"]
-SUPABASE_SERVICE_KEY = st.secrets["SUPABASE_SERVICE_KEY"]
-
-supabase = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)
+supabase = create_client(
+    os.getenv("SUPABASE_URL"),
+    os.getenv("SUPABASE_SERVICE_KEY")
+)
 
 model = SentenceTransformer("./models/all-MiniLM-L6-v2")
 
