@@ -12,6 +12,8 @@ sentence-transformers==2.2.2
 streamlit==1.32.2
 supabase==1.0.3
 huggingface_hub
+fastapi
+uvicorn
 
 # Optional (for safety if your environment uses them)
 tqdm
