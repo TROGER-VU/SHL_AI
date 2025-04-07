@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-model = SentenceTransformer("./models/all-MiniLM-L6-v2")
+model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
 # ✅ Embed function
 def embed(text):

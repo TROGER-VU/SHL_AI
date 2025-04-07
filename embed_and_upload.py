@@ -14,7 +14,7 @@ supabase = create_client(
     os.getenv("SUPABASE_SERVICE_KEY")
 )
 
-model = SentenceTransformer("./models/all-MiniLM-L6-v2")
+model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
 # Load data from individual_test_solutions.json
 with open("individual_test_solutions.json", "r", encoding="utf-8") as f:
