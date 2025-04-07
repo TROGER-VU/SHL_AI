@@ -16,7 +16,7 @@ uvicorn[standard]
 python-multipart
 pydantic
 
-# huggingface_hub==0.14.1
+huggingface_hub==0.14.1
 
 # Optional (for safety if your environment uses them)
 tqdm
