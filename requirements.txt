@@ -15,7 +15,7 @@ fastapi
 uvicorn[standard]
 python-multipart
 pydantic
-
+tabulate
 huggingface_hub==0.14.1
 
 # Optional (for safety if your environment uses them)
